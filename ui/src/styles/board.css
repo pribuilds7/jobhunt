@@ -1,0 +1,112 @@
+.board {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 16px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 240px;
+  padding: 14px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-column);
+  background: var(--column);
+}
+
+.column.is-over {
+  border-color: var(--sky);
+  border-style: dashed;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 2px 4px;
+}
+
+.column-title {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.count-pill {
+  min-width: 26px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  touch-action: manipulation;
+}
+
+.app-card:hover {
+  border-color: var(--accent);
+}
+
+.app-card.is-dragging {
+  opacity: 0.4;
+}
+
+.app-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-card-titles,
+.list-row-main,
+.brand-card-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.app-card-role {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.app-card-company {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.app-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--divider);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+@media (max-width: 800px) {
+  .board {
+    grid-auto-columns: minmax(220px, 80vw);
+  }
+}
