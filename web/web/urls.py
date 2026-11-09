@@ -1,7 +1,5 @@
-from django.urls import path
-
-from . import views
+from django.urls import include, path
 
 urlpatterns = [
-    path('signup', views.signup, name='signup'),
+    path('user_management/', include('web.user_management.urls')),
 ]
